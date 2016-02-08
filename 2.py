@@ -1,6 +1,9 @@
 __author__ = 'yuranich'
 
-import numpy as np
+"""
+Working with kNN classification.
+"""
+
 from sklearn import cross_validation as cv
 from sklearn import neighbors as nb
 import pandas
@@ -8,10 +11,8 @@ from sklearn.preprocessing import scale
 
 df = pandas.read_csv("wine.data")
 classes = df['Class']
-# print(classes)
-data = df.drop(labels = 'Class', axis = 1)
+data = df.drop(labels='Class', axis=1)
 data = scale(data)
-# print(data)
 
 kf = cv.KFold(178, n_folds=5, shuffle=True, random_state=42)
 
