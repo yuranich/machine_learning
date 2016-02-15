@@ -1,4 +1,4 @@
-__author__ = 'p3'
+__author__ = 'yuranich'
 
 import numpy as np
 from sklearn.svm import SVC
@@ -6,8 +6,8 @@ from sklearn.svm import SVC
 svcLin = SVC(100000, 'linear', random_state=241)
 
 data = np.genfromtxt('svm-data.csv', delimiter=',')
-
 svcLin.fit(data[:, [1, 2]], data[:, 0])
 
+
 indexes = svcLin.support_
-print(indexes)
+print(indexes+1)
